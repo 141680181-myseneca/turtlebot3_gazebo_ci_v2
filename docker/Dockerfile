@@ -36,10 +36,13 @@ RUN chmod +x /entrypoint.sh
 COPY my_navigation_node /my_navigation_node
 COPY project2_world.world /project2_world.world
 
-# Build the custom navigation package using colcon
-RUN . /opt/ros/humble/setup.bash && colcon build --base-path /my_navigation_node
+# Switch to Bash for subsequent RUN commands
+SHELL ["/bin/bash", "-c"]
 
-# Use bash as default shell for subsequent RUN commands
+# Build the custom navigation package using colcon
+RUN source /opt/ros/humble/setup.bash && colcon build --base-path /my_navigation_node
+
+# Use Bash as default shell for subsequent commands (if needed)
 SHELL ["/bin/bash", "-c"]
 
 # Set the default entrypoint (runs automatically on 'docker run')
