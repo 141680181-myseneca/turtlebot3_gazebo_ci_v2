@@ -64,11 +64,11 @@ fi
 # (For Project 2, you can manually launch your custom world and navigation node using the provided launch file.)
 echo "🔄 Launching ROS 2 Gazebo Bridge in headless mode..."
 ros2 launch gazebo_ros gazebo.launch.py gui:=false &
-sleep 10
+sleep 20
 
 # Wait for /spawn_entity service and spawn TurtleBot3 (Project 1 functionality)
 echo "🔎 Waiting for /spawn_entity service..."
-timeout 30 bash -c 'until ros2 service list | grep -q /spawn_entity; do sleep 1; done' || {
+timeout 60 bash -c 'until ros2 service list | grep -q /spawn_entity; do sleep 1; done' || {
   echo "❌ ERROR: /spawn_entity service not available."
   exit 1
 }
