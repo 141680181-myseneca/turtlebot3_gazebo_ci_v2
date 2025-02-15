@@ -116,3 +116,14 @@ To test if the robot spawns correctly inside Gazebo:
 ~~~bash
 docker run --rm tb3_sim bash -c "ros2 run gazebo_ros spawn_entity.py -entity tb3 -file /opt/ros/humble/share/turtlebot3_description/urdf/turtlebot3_burger.urdf"
 ~~~
+
+
+---
+
+## ❓ FAQ
+
+**1. What command did you use to create a ROS 2 package?**
+
+I used:
+```bash
+ros2 pkg create --build-type ament_cmake my_package

@@ -3,10 +3,10 @@ name: TurtleBot3 Gazebo CI/CD
 on:
   push:
     branches:
-      - turtlebot3_gazebo_ci
+      - turtlebot3_gazebo_ci_v2
   pull_request:
     branches:
-      - turtlebot3_gazebo_ci
+      - turtlebot3_gazebo_ci_v2
 
 jobs:
   build-and-test:
