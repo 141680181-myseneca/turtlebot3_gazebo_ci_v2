@@ -33,7 +33,7 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Copy the custom navigation package and custom world into the container
-COPY my_navigation_node /my_navigation_node
+COPY ../my_navigation_node /my_navigation_node
 COPY project2_world.world /project2_world.world
 
 # Build the custom navigation package using colcon
